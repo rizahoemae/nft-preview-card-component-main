@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            equi: ["Outfit", "sans-serif"],
+          },
+          extend: {
+            screens : {
+              'sm' : '375px',
+              'md': '1440px',
+            },
+            colors: {
+              white: "hsl(0, 0%, 100%)",
+              "main-bg": "hsl(217, 54%, 11%)",
+              "card-bg": "hsl(216, 50%, 16%)",
+              "line" : "hsl(215, 32%, 27%)",
+              "cyan" : "hsl(178, 100%, 50%)",
+              "soft-blue" : "hsl(215, 51%, 70%)",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Frontend Mentor | NFT preview card component</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | NFT preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+    </style>
+  </head>
+  <body class="items-center w-full h-full min-h-screen justify-center flex bg-main-bg">
+    <div class="w-64 h-auto rounded-xl p-3 bg-card-bg">
+      <div class="flex flex-col">
+        <img src="images/image-equilibrium.jpg" class="rounded-xl" alt="" />
+        <div class="text-white font-equi font-semibold text-[18px] mt-2">Equilibrium #3429</div>
+        <div class="text-white opacity-50 font-equi text-[14px] font-normal mt-2">Our Equilibrium collection promotes balance and calm.</div>
+        <div class="w-full h-12 flex items-center justify-between">
+          <div class="flex items-center justify-center">
+            <img src="images/icon-ethereum.svg" class="h-4 w-3" alt="">
+            <p class="text-cyan ml-2 text-[12px]">0.041ETH</p>
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="images/icon-clock.svg" class="h-4 w-4" alt="">
+            <p class="text-white opacity-50 ml-2 text-[12px]">3 days left</p>
+          </div>
+        </div>
+        <div class="border-b border-line my-2 opacity-50"></div>
+        <div class="flex items-center mb-2">
+          <img src="images/image-avatar.png" class="w-7 h-7" alt="">
+          <div class="text-white text-[12px] ml-2"><span class="opacity-50">Creation of </span>Jules Wyvern<div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
